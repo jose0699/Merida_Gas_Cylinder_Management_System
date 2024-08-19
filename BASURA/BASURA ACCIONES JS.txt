@@ -1,0 +1,248 @@
+// modal de agregar cliente
+    /*modal_agregar_cliente(){
+       let modal="";
+       modal+="<div class='modal-dialog modal1' id='mod1'>";
+        modal+="<div class='modal-content' id='mod_cuer'>";
+        modal+="<div class'modal-header'>";
+       modal+="<button type='button' class='btn btn-close bg-danger btn_cerrar_mod1 text-white'"; 
+       modal+="data-bs-dismiss='modal' aria-label='Close'>x</button>";
+       modal+="</div>";
+       modal+="<div class='modal-body'>";
+       modal+="<h2 class='text-center' id='id_tit_mod1'>Agregar cliente</h2>";
+       modal+="<form action=''>";
+       modal+="<div class='mb-3'>";
+        modal+="<label for='nombre' class='form-label'>Nombre:</label>";
+        modal+="<input type='text'class='form-control'  id='nombre' name='nombre' autocomplete='off' maxlength='30'>";
+        modal+="</div>";
+        modal+="<div class='' id='error_nombre' name='error_nombre'></div>";
+        modal+="<div class='mb-3'>";
+        modal+="<label for='apellido' class='form-label'>Apellido:</label>";
+        modal+="<input type='text'class='form-control'  id='apellido' name='apellido' autocomplete='off' maxlength='30'>";
+        modal+="</div>";
+        modal+="<div class='' id='error_apellido' name='error_apellido'></div>";
+        modal+="<div class='mb-3'>";
+        modal+="<label for='cedula' class='form-label'>Cedula:</label>";
+        modal+="<input type='number'class='form-control'  id='cedula' name='cedula' autocomplete='off' maxlength='10'>";
+        modal+="</div>";
+        modal+="<div class='' id='error_cedula' name='error_cedula'></div>";
+        modal+="<div class='mb-3'>";
+        modal+="<label for='telefono' class='form-label'>Telefono:</label>";
+        modal+="<input type='number'class='form-control'  id='telefono' name='telefono' autocomplete='off' maxlength='11'>";
+        modal+="</div>";
+        modal+="<div class='' id='error_telefono' name='error_telefono'></div>";
+        modal+="<div class='mb-3'>";
+        modal+=`<label for="correo" class="form-label">Correo:</label>`;
+        modal+=`<input type="email" class="form-control"  id="correo" name="correo" autocomplete='off' maxlength='40'>`;
+        modal+="</div>";
+        modal+="<div class='' id='error_correo' name='error_correo'></div>";
+        modal+="<div class='mb-3'>";
+        modal+=`<label for="usuario" class="form-label" id="lb_usuario" name="lb_usuario" style="display: none;">Usuario:</label>`;
+        modal+=`<input type="text" class="form-control"  id="usuario" name="usuario" autocomplete='off' maxlength='40' style="display: none;">`;
+        modal+=`<input type="text" class="form-control"  id="id_cli" name="id_cli" autocomplete='off' maxlength='40' style="display: none;">`;
+        modal+="</div>";
+        modal+="<div class='' id='error_usuario' name='error_usuario'></div>";
+        modal+=`<div class="mb-3">`;
+        modal+=`<label for="mes_pagar" class="form-label" id="lb_mes_pagar" name="lb_mes_pagar">Meses a pagar:</label>`;
+        modal+=`<select class="form-control" id='mes_pagar' name='mes_pagar' aria-label="Default select example">`;
+        modal+=`<option value="1">1</option>`;
+        modal+=`<option value="2">2</option>`;
+        modal+=`<option value="3">3</option>`;
+        modal+=`<option value="4">4</option>`;
+        modal+=`<option value="5">5</option>`;
+        modal+=`<option value="6">6</option>`;
+        modal+=`<option value="7">7</option>`;
+        modal+=`<option value="8">8</option>`;
+        modal+=`<option value="9">9</option>`;
+        modal+=`<option value="10">10</option>`;
+        modal+=`<option value="11">11</option>`;
+        modal+=`<option value="12">12</option>`;
+        modal+=`</select>`;
+        modal+="</div>";
+        modal+=`<div class="modal-footer justify-content-center">`;
+        modal+=`<button type="button" class="btn btn-danger"  id="agre_solicitar_exp" name="agre_solicitar_exp" onclick="ajax.val_for_agre_cli('/validar_cam_agre_cliente', 'POST', '')">Guardar</button>`;
+        modal+=`<button type="button" class="btn btn-danger"  id="mod_cli_usu" name="mod_cli_usu" onclick="acciones.obt_val_edi_cli()" style="display: none;">Guardar</button>`;
+        modal+="</div>";
+        modal+=`<div class="mb-2" id="error_soli_exp1"></div>`;
+        modal+="</form>";
+        modal+="</div>";
+        modal+="</div>";
+        modal+="</div>";
+        return modal;
+    }*/
+
+    // modal agregar pago cliente
+    /*agr_pag_cli(id_usu_cli){
+        let modal="";
+       modal+="<div class='modal-dialog modal1' id='mod1'>";
+        modal+="<div class='modal-content' id='mod_cuer'>";
+        modal+="<div class'modal-header'>";
+       modal+="<button type='button' class='btn btn-close bg-danger btn_cerrar_mod1 text-white'"; 
+       modal+="data-bs-dismiss='modal' aria-label='Close'>x</button>";
+       modal+="</div>";
+       modal+="<div class='modal-body'>";
+       modal+="<h2 class='text-center' id='id_tit_mod1'>Reportar pago</h2>";
+       modal+="<form action=''>";
+        modal+=`<div class="mb-3">`;
+        modal+=`<label for="mes_pagar" class="form-label">Meses a pagar:</label>`;
+        modal+=`<select class="form-control" id='mes_pagar' name='mes_pagar' aria-label="Default select example">`;
+        modal+=`<option value="1">1</option>`;
+        modal+=`<option value="2">2</option>`;
+        modal+=`<option value="3">3</option>`;
+        modal+=`<option value="4">4</option>`;
+        modal+=`<option value="5">5</option>`;
+        modal+=`<option value="6">6</option>`;
+        modal+=`<option value="7">7</option>`;
+        modal+=`<option value="8">8</option>`;
+        modal+=`<option value="9">9</option>`;
+        modal+=`<option value="10">10</option>`;
+        modal+=`<option value="11">11</option>`;
+        modal+=`<option value="12">12</option>`;
+        modal+=`</select>`;
+        modal+=`<select class="form-control" id='id_cli' name='id_cli' aria-label="Default select example" style="display: none;">`;
+        modal+=`<option value="${id_usu_cli}">${id_usu_cli}</option>`;
+        modal+=`</select>`;
+        modal+="</div>";
+        modal+=`<div class="modal-footer justify-content-center">`;
+        modal+=`<button type="button" class="btn btn-danger"  id="agre_solicitar_exp" name="agre_solicitar_exp" onclick="acciones.acc_nue_pag_cli()">Guardar</button>`;
+        modal+="</div>";
+        modal+=`<div class="mb-2" id="error_soli_exp1"></div>`;
+        modal+="</form>";
+        modal+="</div>";
+        modal+="</div>";
+        modal+="</div>";
+        return modal;
+    }*/
+
+    // modal cambiar contraseña a un cliente como administrador
+    /*modal_cam_contra(id_usu_cli){
+        let modal="";
+       modal+="<div class='modal-dialog modal1' id='mod1'>";
+        modal+="<div class='modal-content' id='mod_cuer'>";
+        modal+="<div class'modal-header'>";
+       modal+="<button type='button' class='btn btn-close bg-danger btn_cerrar_mod1 text-white'"; 
+       modal+="data-bs-dismiss='modal' aria-label='Close'>x</button>";
+       modal+="</div>";
+       modal+="<div class='modal-body'>";
+       modal+="<h2 class='text-center' id='id_tit_mod1'>Cambiar contraseña</h2>";
+       modal+="<form action='' method='POST'>";
+        modal+=`<select class="form-control" id='id_cli' name='id_cli' aria-label="Default select example" style="display: none;">`;
+        modal+=`<option value="${id_usu_cli}">${id_usu_cli}</option>`;
+        modal+=`</select>`;
+        modal+=`<div class="mb-3">`;
+        modal+=`<label for="nue_contra" class="form-label">Nueva contraseña:</label>`;
+        modal+=`<input type="password" class="form-control"  id="nue_contra" name="nue_contra" autocomplete='off' maxlength='25'>`;
+        modal+="</div>";
+        modal+=`<div class="mb-3">`;
+        modal+=`<label for="otra_nue_contra" class="form-label">Ingresa nuevamente la contraseña:</label>`;
+        modal+=`<input type="password" class="form-control"  id="otra_nue_contra" name="otra_nue_contra" autocomplete='off' maxlength='25'>`;
+        modal+="</div>";
+        modal+=`<div class="modal-footer justify-content-center">`;
+        modal+=`<button type="button" class="btn btn-danger"  id="agre_solicitar_exp" name="agre_solicitar_exp" onclick="acciones.val_cam_modal_cam_contra()">Cambiar contraseña</button>`;
+        modal+="</div>";
+        modal+=`<div class="mb-2" id="error_soli_exp1"></div>`;
+        modal+="</form>";
+        modal+="</div>";
+        modal+="</div>";
+        modal+="</div>";
+        return modal;
+    }*/
+
+    // mostrar mensaje 
+    /*mos_men(color, mensaje){
+        let alerta=`<div class="alert alert-${color} text-center mb-3" role="alert"><b>${mensaje}</b></div>`;
+        return alerta;
+    }
+    // expresion regular para permitir solo texto
+    exp_tex(valor){
+        const regex = /[^a-zA-Záéíóúñü ]/g;
+        let res ="";
+        if (regex.test(valor)) {
+            res = true;
+        }else{
+            res = false;
+        }
+        return res;
+    }*/
+
+    // expresion regular validar correos eletronicos
+    /*exp_correo(valor){
+        const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let res =""
+        if(regex.test(valor)){
+            res = false;
+        }else{
+            res = true;
+        }
+        return res;
+    }
+    // envio de formulario agregar nuevo pago del cliente
+    acc_nue_pag_cli(){
+        ajax.rep_nue_pag_cli('/rep_nue_pag_cli', 'POST', $("#mes_pagar").val(), $("#id_cli").val());
+    }*/
+
+    }*/
+// validar campos del modal cambiar contraseña por el administrador
+    /*val_cam_modal_cam_contra(){
+        let id_cli = $("#id_cli").val();
+        let nue_contra = $("#nue_contra").val();
+        let rep_nue_contra = $("#otra_nue_contra").val();
+        if(nue_contra.length < 1 || rep_nue_contra.length < 1){
+            $("#error_soli_exp1").html(acciones.mos_men("danger", "Algun campo esta vacio"));
+        }else if(nue_contra.length < 8){
+            $("#error_soli_exp1").html(acciones.mos_men("danger", "La contraseña debe tener entre 8 y 25 caracteres"));
+        }else if(rep_nue_contra != nue_contra){
+            $("#error_soli_exp1").html(acciones.mos_men("danger", "Las contraseñas no coinciden"));
+        }else{
+            ajax.cam_contra_cli("/cam_contra_cli", "POST", nue_contra, rep_nue_contra, id_cli);
+        }*/
+
+    // modal de  cambiar contraseña como cliente
+    /*mod_can_con_cliente(){
+        let modal="";
+       modal+="<div class='modal-dialog modal1' id='mod1'>";
+        modal+="<div class='modal-content px-2 py-2' id='mod_cuer'>";
+        modal+="<div class'modal-header'>";
+       modal+="<button type='button' class='btn btn-close bg-danger btn_cerrar_mod1 text-white'"; 
+       modal+="data-bs-dismiss='modal' aria-label='Close'>x</button>";
+       modal+="</div>";
+       modal+="<div class='modal-body'>";
+       modal+="<h2 class='text-center' id='id_tit_mod1'>Cambiar mi contraseña</h2>";
+       modal+="<form action='' method='POST'>";
+        modal+=`<div class="mb-3">`;
+        modal+=`<label for="nue_contra" class="form-label">Nueva contraseña:</label>`;
+        modal+=`<input type="password" class="form-control"  id="nue_contra" name="nue_contra" autocomplete='off' maxlength='25'>`;
+        modal+="</div>";
+        modal+=`<div class="mb-3">`;
+        modal+=`<label for="otra_nue_contra" class="form-label">Ingresa nuevamente la contraseña:</label>`;
+        modal+=`<input type="password" class="form-control"  id="otra_nue_contra" name="otra_nue_contra" autocomplete='off' maxlength='25'>`;
+        modal+="</div>";
+        modal+=`<div class="modal-footer justify-content-center">`;
+        modal+=`<button type="button" class="btn btn-danger"  id="agre_solicitar_exp" name="agre_solicitar_exp" onclick="acciones.val_cam_modal_cam_contra_cli()">Cambiar contraseña</button>`;
+        modal+="</div>";
+        modal+=`<div class="mb-2" id="error_soli_exp1"></div>`;
+        modal+="</form>";
+        modal+="</div>";
+        modal+="</div>";
+        modal+="</div>";
+        return modal;
+    }*/
+
+    // mostrar modal cambiar mi contraseña como cliente
+    /*mostrar_mod_camcon_cli(){
+        $("#exampleModal1").html(acciones.mod_can_con_cliente);
+        $("#exampleModal1").modal("show");
+    }
+    val_cam_modal_cam_contra_cli(){
+        let nue_contra = $("#nue_contra").val();
+        let rep_nue_contra = $("#otra_nue_contra").val();
+        if(nue_contra.length < 1 || rep_nue_contra.length < 1){
+            $("#error_soli_exp1").html(acciones.mos_men("danger", "Algun campo esta vacio"));
+        }else if(nue_contra.length < 8 || nue_contra.length > 25){
+            $("#error_soli_exp1").html(acciones.mos_men("danger", "La contraseña debe tener entre 8 y 25 caracteres"));
+        }else if(rep_nue_contra != nue_contra){
+            $("#error_soli_exp1").html(acciones.mos_men("danger", "Las contraseñas no coinciden"));
+        }else{
+            // alert(nue_contra.length);
+            ajax.cam_contra_mi_cli("/cam_contra_cli_mi", "POST", nue_contra, rep_nue_contra);
+        }
+    }*/

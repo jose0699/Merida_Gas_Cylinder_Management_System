@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block body %}
+      <!-- banner -->
+      <section class="banner_main">
+         <div id="banner1" class="carousel slide banner_slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#banner1" data-slide-to="0" class="active"></li>
+            </ol>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container-fluid">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-7 col-lg-5">
+                              <div class="text-bg">
+                                 <h1 style = "margin-top: 30vh; margin-left: -9vh;">Sector Mérida</h1>
+                                 <span></span>
+                                 <h2 style = "margin-top: -12vh; margin-left: -6vh; font-weight: bold;" >Gestión de Cilindros de Gas...¡Bienvenidos!</h2>
+                              </div>
+                           </div>
+                           <div class="col-md-12 col-lg-7">
+                              <div class="row">
+                                 <div class="col-md-6">
+                                    <div class="ban_track">
+                                       <figure><img src="{{ url_for('static', filename='Bombona de gas.jpg') }}" style="margin-left: -150vh; margin-top: -8vh;"alt="#"/></figure>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <form class="transfot" action="{{ url_for('ini_sesion_usu') }}" method="post">
+                                       <div class="col-md-12" style = "margin-left: -2vh">
+                                          <!--<span>Professional Services</span> -->
+                                          <h3>Ingresa con tu usuario</h3>
+                                       </div>
+                                       <div class="col-md-20">
+                                          <input class="transfot_form" placeholder="Usuario" type="text" name="usuario" {% if log_error == 1 %} value="{{ usuario }}" {% endif %}>
+                                       </div>
+                                       <div class="col-md-20">
+                                          <input class="transfot_form" placeholder="Contraseña" type="password" name="contrasena">
+                                       </div>
+                                       {% if log_error == 1 %}
+                                          <div class="alert alert-danger text-center" id="error_login" name="error_login" role="alert">
+                                             <div>
+                                                <b><i class="fa-solid fa-triangle-exclamation mr-1"></i>{{ text_error }}</b>
+                                             </div>
+                                          </div>
+                                       {% endif %}
+                                       <div class="col-md-12">
+                                          <button class="get_now">Iniciar sesion</button>
+                                       </div>
+                                       <div class="col-md-12">
+                                          <a href="{{ url_for('registrarme') }}">Registrame</a>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end banner -->
+{% endblock body %}
+      
+

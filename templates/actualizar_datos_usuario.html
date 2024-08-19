@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block body %}
+   <!--
+      Extension: En esta parte el usuario actualiza sus datos
+   -->
+   <section class="banner_main">
+      <div id="banner1" class="carousel slide banner_slide" data-ride="carousel">
+         <ol class="carousel-indicators">
+            <li data-target="#banner1" data-slide-to="0" class="active"></li>
+         </ol>
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <div class="container-fluid">
+                  <div class="carousel-caption">
+                     <div class="row">
+                        <div class="col-md-7 col-lg-5">
+                           <div class="text-bg">
+                              <h1 style = "margin-top: 30vh; margin-left: -9vh;">Sector Mérida</h1>
+                              <span></span>
+                              <h2 style = "margin-top: -12vh; margin-left: -6vh; font-weight: bold;" >Gestión de Cilindros de Gas...¡Bienvenidos!</h2>
+                           </div>
+                        </div>
+       
+                        <div class="col-md-12 col-lg-7">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="ban_track">
+                                    <figure><img src="{{ url_for('static', filename='Bombona de gas.jpg') }}" style="margin-left: -150vh; margin-top: -8vh;"alt="#"/></figure>
+                                 </div>
+                              </div>
+
+                              <div class="col-md-6">
+                                 <form class="transfot" action="{{ url_for('actualizar_datos_client') }}" method="POST">
+                                    
+                                    <div class="col-md-12">
+                                       <h3>Actualiza tu información</h3>
+                                    </div>
+                              
+                                    <div class="col-md-12">
+                                       <input class="transfot_form" placeholder="Nombre" type="text" name="nombre">
+                                    </div>
+                                                          
+                                    <div class="col-md-12">
+                                       <input class="transfot_form" placeholder="Contraseña" type="password" name="contrasena">
+                                    </div>
+                               
+                                    <div class="col-md-12">
+                                       <input class="transfot_form" placeholder="Correo" type="email" name="correo">
+                                    </div>
+                                
+                                    <div class="col-md-12">
+                                       <button class="get_now">Actualizar</button>
+                                    </div>
+                                
+                                    <div class="col-md-12">
+                                       <a href="/inicio">Regresar</a>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+{% endblock body %}
+      
+

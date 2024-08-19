@@ -1,0 +1,352 @@
+	// validar formulario del modal agregar cliente
+	/*val_for_agre_cli(url, type, data){
+        $.ajax({
+			url: url,
+			type: type,
+			data: {data},
+			success: function(result){
+				let array = ["error_nombre", "error_apellido", "error_cedula", "error_telefono", "error_correo"];
+				let nv_array = [];
+
+				if($("#nombre").val() === ""){
+					$("#error_nombre").html(acciones.mos_men('danger', 'El campo nombre esta vacio'));
+					nv_array = array.filter(arr => arr !== 'error_nombre');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if(acciones.exp_tex($("#nombre").val()) == true){
+					$("#error_nombre").html(acciones.mos_men('danger', 'El campo nombre solo permite letras'));
+					nv_array = array.filter(arr => arr !== 'error_nombre');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if($("#apellido").val() === ""){
+					$("#error_apellido").html(acciones.mos_men('danger', 'El campo apellido esta vacio'));
+					nv_array = array.filter(arr => arr !== 'error_apellido');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if(acciones.exp_tex($("#apellido").val()) == true){
+					$("#error_nombre").html(acciones.mos_men('danger', 'El campo apellido solo permite letras'));
+					nv_array = array.filter(arr => arr !== 'error_apellido');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if($("#cedula").val() === ""){
+					$("#error_cedula").html(acciones.mos_men('danger', 'El campo cedula esta vacio'));
+					nv_array = array.filter(arr => arr !== 'error_cedula');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if($("#telefono").val() === ""){
+					$("#error_telefono").html(acciones.mos_men('danger', 'El campo telefono esta vacio'));
+					nv_array = array.filter(arr => arr !== 'error_telefono');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if($("#correo").val() === ""){
+					$("#error_correo").html(acciones.mos_men('danger', 'El campo correo esta vacio'));
+					nv_array = array.filter(arr => arr !== 'error_correo');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if(acciones.exp_correo($("#correo").val()) == true){
+					$("#error_correo").html(acciones.mos_men('danger', 'Correo invalido'));
+					nv_array = array.filter(arr => arr !== 'error_correo');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else{
+					array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+					let nombre = $("#nombre").val();
+					let apellido = $("#apellido").val();
+					let cedula = $("#cedula").val();
+					let telefono = $("#telefono").val();
+					let correo = $("#correo").val();
+					let mes_pagar = $("#mes_pagar").val();
+					ajax.env_for_agre_cliente('/env_for_agre_cliente', 'POST', nombre, apellido, cedula, telefono,correo, mes_pagar);
+				}
+			},
+			error: function(error){
+				console.log(error);
+			}
+	
+		});
+	}
+	// verificar y enviar datos ingresados al agregar clientes
+	env_for_agre_cliente(url, type, nombre, apellido, cedula, telefono, correo, mes_pagar){
+        $.ajax({
+			url: url,
+			type: type,
+			data: {
+				nombre, apellido, cedula, telefono, correo, mes_pagar
+			},
+			success: function(result){
+				window.location.href = '/inicio';
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	}*/
+
+// reportar pago de inscripcio, al inscribirun cliente
+	/*rep_nue_pag_cli(url, type, mes_pagar, id_cli){
+		$.ajax({
+			url: url,
+			type: type,
+			data: {
+				mes_pagar, id_cli
+			},
+			success: function(result){
+				// alert(result);
+				window.location='/inicio';
+			},
+			error: function(error){
+				console.log(error);
+			}
+	
+		});
+	}*/
+
+	// editar datos del usuario o cliente
+	/*editar_usuario_cliente(url, type, nombre, apellido, cedula, telefono, correo, usuario, id_cli){
+		$.ajax({
+			url: url,
+			type: type,
+			data: {
+				nombre, apellido, cedula, telefono, correo, usuario, id_cli
+			},
+			success: function(result){
+				let array = ["error_nombre", "error_apellido", "error_cedula", "error_telefono", "error_correo", "error_usuario"];
+				let nv_array = [];
+
+				if($("#nombre").val() === ""){
+					$("#error_nombre").html(acciones.mos_men('danger', 'El campo nombre esta vacio'));
+					nv_array = array.filter(arr => arr !== 'error_nombre');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if(acciones.exp_tex($("#nombre").val()) == true){
+					$("#error_nombre").html(acciones.mos_men('danger', 'El campo nombre solo permite letras'));
+					nv_array = array.filter(arr => arr !== 'error_nombre');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if($("#apellido").val() === ""){
+					$("#error_apellido").html(acciones.mos_men('danger', 'El campo apellido esta vacio'));
+					nv_array = array.filter(arr => arr !== 'error_apellido');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if(acciones.exp_tex($("#apellido").val()) == true){
+					$("#error_nombre").html(acciones.mos_men('danger', 'El campo apellido solo permite letras'));
+					nv_array = array.filter(arr => arr !== 'error_apellido');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if($("#cedula").val() === ""){
+					$("#error_cedula").html(acciones.mos_men('danger', 'El campo cedula esta vacio'));
+					nv_array = array.filter(arr => arr !== 'error_cedula');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if($("#telefono").val() === ""){
+					$("#error_telefono").html(acciones.mos_men('danger', 'El campo telefono esta vacio'));
+					nv_array = array.filter(arr => arr !== 'error_telefono');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if($("#correo").val() === ""){
+					$("#error_correo").html(acciones.mos_men('danger', 'El campo correo esta vacio'));
+					nv_array = array.filter(arr => arr !== 'error_correo');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else if(acciones.exp_correo($("#correo").val()) == true){
+					$("#error_correo").html(acciones.mos_men('danger', 'Correo invalido'));
+					nv_array = array.filter(arr => arr !== 'error_correo');
+					nv_array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+				}else{
+					array.forEach(element => {
+						$(`#${element}`).html("");
+					});
+					ajax.gua_act_dat_cli("/gua_act_dat_cli", "POST", nombre, apellido, cedula, telefono, correo, usuario, id_cli);
+				}
+			},
+			error: function(error){
+				console.log(error);
+			}
+	
+		});
+
+	}*/
+
+	// vereficar valores en la base de datos y guardar actualizacion de datos
+	/*gua_act_dat_cli(url, type, nombre, apellido, cedula, telefono, correo, usuario, id_cli){
+        $.ajax({
+			url: url,
+			type: type,
+			data: {
+				nombre, apellido, cedula, telefono, correo, usuario, id_cli
+			},
+			success: function(result){
+				if(result == "si"){
+					window.location.href = '/inicio';
+				}else{
+					$("#error_soli_exp1").html(acciones.mos_men("danger", result));
+				}
+				
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	}*/
+	// cambiar contraseña por el administrador a un cliente , rep_nue_contra, id_cli
+	/*cam_contra_cli(url, type, nue_contra, rep_nue_contra, id_cli){
+		$.ajax({
+			url: url,
+			type: type,
+			data: {
+				nue_contra: nue_contra, rep_nue_contra: rep_nue_contra, id_cli: id_cli
+			},
+			success: function(result){
+				if(result == "si"){
+					window.location.href = '/inicio';
+				}else{
+					$("#error_soli_exp1").html(acciones.mos_men("danger", result));
+				}
+				
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	}*/
+
+
+	// mostrar tabla de clientes: pagos realizados
+	/*cliente(url,type){
+		$('#datatable_users').DataTable({
+			"ajax":{
+				"url": "/mostrar_pag_cli",
+				"type": "POST",
+				"dataSrc":""
+			},
+			"columns":
+			[
+				{"data": "num"},
+				{"data": "fec_pago"},
+				{"data": "cant_mes_pag"},
+			],
+			ordering: true,
+			language: {
+				lengthMenu: "Mostrar _MENU_ registros por pagina",
+				zeroRecords: "Ningun usuario encontrado",
+				info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
+				infoEmpty: "Ningun usuario encontrado",
+				infoFiltered: "(filtrados desde _MAX_ registros totales)",
+				search: "Buscar...",
+				loadingRecords: "Cargando...",
+				paginate: {
+					first: "Primero",
+					last: "Ultimo",
+					next: "Siguiente",
+					previous: "Anterior"
+				}
+			}
+		});
+	}*/
+
+	// validar si la contraseña es valida se guarda
+	/*cam_contra_mi_cli(url, type, nue_contra, rep_nue_contra){
+		$.ajax({
+			url: url,
+			type: type,
+			data: {
+				nue_contra: nue_contra, rep_nue_contra: rep_nue_contra
+			},
+			success: function(result){
+				if(result == "si"){
+					window.location.href = '/inicio';
+				}else{
+					$("#error_soli_exp1").html(acciones.mos_men("danger", result));
+				}
+				
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	}*/
+
+// llamar cual quier modal a mostrar
+	/*mostrar_modal_sn_para(url, type, data, def, modal){
+        $.ajax({
+			url: url,
+			type: type,
+			data: { data: data},
+			success: function(result){
+				if(def==1){
+					$("#exampleModal1").html(modal);
+					$('#mod_cuer').css('padding', '1rem');
+					$("#id_tit_mod1").html("Editar usuario");
+					$("#mes_pagar").css("display","none");
+					$("#lb_mes_pagar").css("display","none");
+					$("#mod_cli_usu").css("display","block");
+					$("#agre_solicitar_exp").css("display", "none");
+					// rep_nue_pag_cli(url, type, mes_pagar, id_cli)
+					$("#exampleModal1").modal('show');
+				}else if(def==2){
+					// const objeto = JSON.parse(result);
+					$("#exampleModal1").html(modal);
+					$('#mod_cuer').css('padding', '1rem');
+					$("#id_tit_mod1").html("Editar usuario");
+					$("#mes_pagar").css("display","none");
+					$("#lb_mes_pagar").css("display","none");
+					$("#mod_cli_usu").css("display","block");
+					$("#agre_solicitar_exp").css("display", "none");
+					$("#usuario").css("display", "block");
+					$("#lb_usuario").css("display", "block");
+					// rep_nue_pag_cli(url, type, mes_pagar, id_cli)
+					$("#nombre").val(result[0][0]);
+					$("#apellido").val(result[0][1]);
+					$("#cedula").val(result[0][2]);
+					$("#telefono").val(result[0][3]);
+					$("#correo").val(result[0][4]);
+					$("#usuario").val(result[0][5]);
+					$("#id_cli").val(result[0][7])
+					$("#exampleModal1").modal('show');
+					// alert(result[0][0]);
+				}else if(def == 3){
+					// alert(modal);
+					$("#exampleModal1").html(modal);
+					$('#mod_cuer').css('padding', '1rem');
+					$("#exampleModal1").modal('show');
+				}else if(def == 4){
+					// editar informacion del usuario como administrador
+					$("#exampleModal1").html(modal);
+					$("#nombre").val(result[0][0]);
+					$("#apellido").val(result[0][1]);
+					$("#cedula").val(result[0][3]);
+					$("#telefono").val(result[0][4]);
+					$("#correo").val(result[0][5]);
+					$("#usuario").val(result[0][2]);
+					$("#exampleModal1").modal('show');
+				}else{
+					$("#exampleModal1").html(modal);
+					$('#mod_cuer').css('padding', '1rem');
+					$("#exampleModal1").modal('show');
+				}
+			},
+			error: function(error){
+				console.log(error);
+			}
+	
+		});
+	}*/

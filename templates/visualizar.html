@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<!--
+   Extensión: En esta extensión se reflaja donde estara señalado despues de logear el cliente
+-->
+
+<section class="banner_main">
+   <div id="banner1" class="carousel slide banner_slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#banner1" data-slide-to="0" class="active"></li>
+      </ol>
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+            <div class="container-fluid">
+               <div class="carousel-caption">
+                  <div class="row">
+                     <div class="col-md-7 col-lg-5">
+                        <div class="text-bg">
+                           <h1 style = "margin-top: 30vh; margin-left: -9vh;">Sector Mérida</h1>
+                           <span></span>
+                           <h2 style = "margin-top: -12vh; margin-left: -6vh; font-weight: bold;" >Gestión de Cilindros de Gas...¡Bienvenidos!</h2>
+                        </div>
+                     </div>
+                     <div class="col-md-12 col-lg-7">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="ban_track">
+                                 <figure><img src="{{ url_for('static', filename='Bombona de gas.jpg') }}" style="margin-left: -150vh; margin-top: -8vh;"alt="#"/></figure>
+                              </div>
+                           </div>
+
+                           <div class="col-md-6">
+                              <h1>Información Personal</h1>
+                              <div class="my-2">
+                                 {% for res in datos_usu %}    
+                                    <h4><b>Nombre:</b> {{ res[0] }}</h4>
+                                    <h4><b>Cédula:</b> {{ res[1] }}</h4>
+                                 {% endfor %}
+                              
+                                 {% for res2 in datos_cad_bom %}
+                                    <h4><b>Nro. Cilindros:</b> {{ res2[0] }}</h4>
+                                 {% endfor %}
+                              </div>
+                              
+                              <h1>Cilindro</h1> 
+                              <div class="my-2">
+                                 <a href="{{ url_for('Regresar_admin') }}"><button type="button" class="btn btn-primary">Regresar</button></a>
+                                 <a href="{{ url_for('agregar_bombona_admin') }}"><button type="button" class="btn btn-primary">+</button></a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+  <!--<th class='text-center tit_c_tab1'>Eliminar</th>-->
+
+   <div class="container mt-5">
+      <table class="table table-dark table-hover table-striped shadow-lg" style='width: 100%;' id='bombonas_persona'>
+         <thead class='thead_tab1'>
+            <tr>
+               <th class='text-center tit_c_tab1'>Num</th>
+               <th class='text-center tit_c_tab1'>Tamaño del cilindro</th>
+               <th class='text-center tit_c_tab1'>Estatus</th>
+               <th class='text-center tit_c_tab1'>Eliminar</th>
+            </tr>
+         </thead>
+         <tbody class='tbody_tab1'>
+         </tbody>
+      </table>
+   </div>
+</section>
+{% endblock body %}

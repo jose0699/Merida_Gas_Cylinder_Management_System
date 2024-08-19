@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<!-- 
+   Extensión. Aquí se agregarian las bombonas pertinentes
+-->
+<section class="banner_main">
+   <div id="banner1" class="carousel slide banner_slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+         <li data-target="#banner1" data-slide-to="0" class="active"></li>
+      </ol>
+
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+            <div class="container-fluid">
+               <div class="carousel-caption">
+                  <div class="row">
+                     <div class="col-md-7 col-lg-5">
+                     </div>
+
+                     <div class="col-md-12 col-lg-7">
+                        <div class="row">
+                           <div class="col-md-7" style="background-color: rgba(0,0,0,0.7); border-radius: 5px;">
+                                <form class="transfot" action="{{ url_for('actualizar_cilindro_admin3') }}" method="post">
+                                    <input type='hidden' name='vi_us' id='vi_us' value={{vi_us}}>
+
+                                    <div class="col-md-12">
+                                        <h3>Agregar Cilindro</h3>
+                                    </div>
+                                    
+                                    <div class="col-md-12 mb-2">
+                                        <span>Elige el tamaño del cilindro</span>
+                                        <select class="custom-select" name="tamano_bom" id="tamano_bom">
+                                        {% for res1 in tama_bom %}
+                                            <option value="{{ res1[0] }}">{{ res1[1] }}</option>
+                                        {% endfor %}
+                                        </select>
+                                    </div>
+                                    
+                                    {% if log_error == 1 %}
+                                        <div class="alert alert-danger text-center" id="error_login" name="error_login" role="alert">
+                                        <div>
+                                            <b><i class="fa-solid fa-triangle-exclamation mr-1"></i>{{ text_error }}</b>
+                                        </div>
+                                        </div>
+                                    {% endif %}
+                                    
+                                    <div  class="text-center">
+                                        <button class="get_now" style="width: 80%;">Agregar Cilindro</button>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <a href="#">Regresar</a>
+                                    </div>
+                                </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>   
+</section>
+{% endblock body %}
